@@ -1,0 +1,33 @@
+'租悦机'后台管理系统打包:cnpm run build:chaoyuezu压缩所有文件;
+'租悦机'仪表盘打包:cnpm run build:cyz压缩所有文件;
+'租悦机APP'打包: 发行(U)-原生App-云打包(P);
+
+解决：HBuilder X 未检测到手机或模拟器:
+https://wudan.blog.csdn.net/article/details/107563333
+
+App云打包报错:
+https://ask.dcloud.net.cn/question/103621?item_id=134849&rf=false
+
+git remote add origin https://github.com/xxxxx
+
+uni-app使用native.js拉取手机通讯录页面选择手机号,仿支付宝微信手机充值选择通讯录好友:
+https://blog.csdn.net/qq_41980461/article/details/106757483
+
+支付宝小程序-成员管理https://open.alipay.com/mini/dev/sub/member-mange?appId=2021002103679411&bundleId=com.alipay.alipaywallet#DEVELOPER
+
+Vue中的“混合”——mixins使用方法
+https://www.cnblogs.com/Ivy-s/p/9937173.html
+
+Sourcetree版本管理代码,uTools上传代码生成在线网址,FileZilla服务器,Postman调试接口
+
+vuex中module里面的数据操作总结
+https://blog.csdn.net/WU5229485/article/details/102136797
+
+一次性讲明白vue插槽slot
+http://caibaojian.com/vue-slot.html
+
+elementUi里面的el-input框有时候无法输入的问题
+https://blog.csdn.net/freya_dr/article/details/100610784
+
+如何免费的、完整的把 PDF 转换为 Word？
+https://www.zhihu.com/question/20841069
