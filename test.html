@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<style>
+			body{
+				-moz-user-select: none; /*火狐*/
+				-webkit-user-select: none; /*webkit浏览器*/
+				-ms-user-select: none; /*IE10*/
+				-khtml-user-select: none; /*早期浏览器*/
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box" style="border: 2px solid red;padding:10px;display: inline-block;position: relative;margin: 200px 0 0 200px;box-sizing: border-box;">
+			<div class="son" style="width: 10px;height: 10px;background-color: aqua;position: absolute;top: -5px;right: -5px;cursor:pointer;border-radius: 50%;"></div>
+			<img src="sbtb2.png" alt="img" style="border: 1px solid gray;padding:0px;pointer-events: none;">
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var box=document.querySelector(".son");
+			var imgDom=document.querySelector("img");
+			
+			var divX=0;
+			var divY=0;
+			var mouseX=0;
+			var mouseY=0;
+			var imgX = imgDom.parentNode.offsetLeft;
+			//为box绑定一个鼠标按下事件
+			box.onmousedown=function(e){
+				//获取盒子距离浏览器可视窗口的水平距离和垂直距离
+				
+				divX=this.offsetLeft;
+				divY=this.offsetTop;
+				//获取鼠标距离浏览器可视窗口的水平位置和垂直位置
+				mouseX=e.clientX;
+				mouseY=e.clientY;
+				var imgWidth = imgDom.clientWidth;
+				//为全局绑定一个鼠标移动事件（1.为什么不给box绑定？）
+				document.onmousemove=function(e){
+					//获取移动后的水平偏移量和垂直偏移量
+					var disX=e.clientX-mouseX;
+					var disY=e.clientY-mouseY;
+					
+					console.log(e.clientX,imgX + 50);
+					if(e.clientX <= imgX + 50){
+						box.style.left= 50 +"px";
+						imgDom.style.width = 50 -20 +"px";
+					}else{
+						//令箱子移动：移动前的位置+移动后的位置
+						box.style.left=disX+divX+"px";
+						imgDom.style.width = imgWidth+disX+"px";
+					}
+					
+					
+				}
+				//为盒子绑定一个鼠标移出事件,使箱子停止移动
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		}   
+
+	</script>
+</html>
